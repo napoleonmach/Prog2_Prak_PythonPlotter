@@ -12,16 +12,18 @@ def plot_function(expression, x_min, x_max, width, height):
 
     normalized_y_values = [(y - y_min) / (y_max - y_min) for y in y_values]
 
+    lineheight = math.floor(height - (y_max*step)) #Rundung mit floor oder ceil
+
     for row in range(height, -1, -1):
         line = ""
         for value in normalized_y_values:
-            if row*(1/height)>value and (row-1)*(1/height)<value:
+            if row*(1/height)>value and (row-1)*(1/height)<=value:
                 line+= "*"
             else:
-                if True: #TODO: Bedingung der Nulllinie einfügen
-                    line+= " "    
+                if row == lineheight: #TODO: Bedingung der Nulllinie einfuegen
+                    line+= "_"    
                 else:
-                    line+= "_"
+                    line+= " "
         print(line)
 
 def main():
