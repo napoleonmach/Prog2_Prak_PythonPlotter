@@ -15,7 +15,7 @@ def plot_function(expression, x_min, x_max, width, height):
     lineheight = math.floor(height - (y_max*step)) #Rundung mit floor oder ceil
 
     for row in range(height, -1, -1):
-        line = ""
+        line = ""        
         for value in normalized_y_values:
             if row*(1/height)>value and (row-1)*(1/height)<=value:
                 line+= "*"
