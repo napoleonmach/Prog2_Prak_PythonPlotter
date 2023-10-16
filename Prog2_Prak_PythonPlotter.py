@@ -1,4 +1,4 @@
-
+#"2*math.sin(x)+1" -6 8 40 4
 import math
 import argparse
 
