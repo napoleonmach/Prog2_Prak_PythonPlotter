@@ -24,10 +24,6 @@ def plot_function(expression, x_min, x_max, width, height):
                     line+= "_"
         print(line)
 
-
-
-
-
 def main():
     parser = argparse.ArgumentParser(description="Matheplotter aus Hogwards")
     parser.add_argument("expression", type=str, help="Funktionsgleichung, z.B., '2*math.sin(x)+1'")
