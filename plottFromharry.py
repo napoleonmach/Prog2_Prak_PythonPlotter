@@ -39,7 +39,7 @@ class Ui_Dialog(object):
         self.buReset.setText(_translate("Dialog", "Reset"))
 
     def buOk_Click(self):
-        a = plotter.plot_function(self.txtEingabe.toPlainText, -10, 10, 40, 31) #TODO: zwei weitere Textboxen oder so zum ändern des anzeigeradiuses :)
+        a = plotter.plot_function(self.txtEingabe.toPlainText(), -10, 10, 40, 31) #TODO: zwei weitere Textboxen oder so zum ändern des anzeigeradiuses :)
         self.txtAusgabe.setPlainText(a)
 
     def buReset_Click(self):

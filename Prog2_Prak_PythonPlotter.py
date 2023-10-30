@@ -1,7 +1,9 @@
 #"2*math.sin(x)+1" -6 8 40 4
+import math
+import argparse
+
 class plotter:
-    import math
-    import argparse
+
 
     def plot_function(expression, x_min, x_max, width, height):
         step = (x_max - x_min) / width
@@ -15,6 +17,7 @@ class plotter:
 
         lineheight = math.floor(height - (y_max*step)) #Rundung mit floor oder ceil
 
+        rline = ""
         for row in range(height, -1, -1):
             line = ""        
             for value in normalized_y_values:
@@ -25,7 +28,9 @@ class plotter:
                         line+= "_"    
                     else:
                         line+= " "
-            return(line)
+            rline += line + '\n'
+        return rline
+
 
     def main():
         parser = argparse.ArgumentParser(description="Matheplotter aus Hogwards")
