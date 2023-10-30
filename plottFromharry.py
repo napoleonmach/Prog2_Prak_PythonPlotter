@@ -29,7 +29,7 @@ class Ui_Dialog(object):
 
         self.retranslateUi(Dialog)
         self.buOk.clicked.connect(self.buOk_Click) 
-        self.buReset.clicked.connect(self.bbuReset_Click) 
+        self.buReset.clicked.connect(self.buReset_Click) 
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
@@ -39,12 +39,12 @@ class Ui_Dialog(object):
         self.buReset.setText(_translate("Dialog", "Reset"))
 
     def buOk_Click(self):
-        a = plotter.plot_function(self.txtEingabe, -10, 10, 40, 31) #TODO: zwei weitere Textboxen oder so zum ändern des anzeigeradiuses :)
+        a = plotter.plot_function(self.txtEingabe.toPlainText, -10, 10, 40, 31) #TODO: zwei weitere Textboxen oder so zum ändern des anzeigeradiuses :)
         self.txtAusgabe.setPlainText(a)
 
     def buReset_Click(self):
-        self.txtAusgabe.clear
-        self.txtEingabe.clear
+        self.txtAusgabe.setPlainText("")
+        self.txtEingabe.setPlainText("")
 
 if __name__ == "__main__":
     import sys
